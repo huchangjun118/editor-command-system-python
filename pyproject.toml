@@ -1,12 +1,23 @@
 [project]
 name = "editor-command-system-python"
 version = "0.1.0"
-requires-python = ">=3.14.4"
+description = "面向可扩展开发工具的命令、快捷键与开发者终端系统"
+requires-python = ">=3.14"
 dependencies = [
-    "fastapi[standard]>=0.141.1",
     "pytest>=8.0",
 ]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
 
 [[tool.uv.index]]
 url = "https://mirrors.aliyun.com/pypi/simple/"
 default = true
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
